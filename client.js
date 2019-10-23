@@ -12,6 +12,15 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
+  conn.on('connect', () => {
+    conn.write('Name: LEE');
+    conn.write('Successfully connected to game server');
+    // setTimeout(()=>{
+    //   conn.write('Move: up');      
+    // },500)
+    
+  });
+
   // client.js
   conn.on('data', (data) => {
     console.log('Server says: ', data);
@@ -20,4 +29,6 @@ const connect = function () {
   return conn;
 }
 
-module.exports = {connect};
+module.exports = {
+  connect
+};
