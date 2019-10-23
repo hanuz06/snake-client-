@@ -8,7 +8,7 @@ let connection;
  */
 
 
-const handleUserInput = (key) => {
+const handleUserInput = key => {
   if (key === "w") {
     connection.write('Move: up');    
   }
@@ -25,8 +25,13 @@ const handleUserInput = (key) => {
     connection.write('Move: right');    
   }
 
+  if (key === "q") {
+    connection.write('Say: MMM');
+    console.log('Write: Hello Andrey')    
+  }
+
   if (key === "\u0003") {
-    // process.stdout.write("Thanks for playing, ciao!\n");
+    process.stdout.write("Thanks for playing, ciao!\n");
     process.exit();
   }
 }
