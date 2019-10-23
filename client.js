@@ -13,8 +13,8 @@ const connect = function () {
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
-    conn.write('Name: LEE');
     conn.write('Successfully connected to game server');
+    conn.write('Name: LEE');
     // setTimeout(()=>{
     //   conn.write('Move: up');      
     // },500)
@@ -25,7 +25,6 @@ const connect = function () {
   conn.on('data', (data) => {
     console.log('Server says: ', data);
   });
-
   
   return conn;
 }
